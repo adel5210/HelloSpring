@@ -1,0 +1,15 @@
+version: '2'
+services:
+    hello-spring:
+        container_name: hello-spring
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: hello-world:latest
+        ports:
+            - 8080:8080
+        networks:
+            - spring-cloud-network
+networks:
+    spring-cloud-network:
+        driver: bridge
